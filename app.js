@@ -9,9 +9,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-
 var mongoose = require('mongoose');
-mongoose.connect('http://chimp-mongo:27017');
+
+mongoose.connect('mongodb://chimp-mongo:27017/chimp', { useNewUrlParser: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
