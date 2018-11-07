@@ -1,0 +1,15 @@
+CHIMP
+Node & Mongo
+
+Requirements:
+- Docker for Mac or Docker for Windows
+
+Getting started:
+- Clone repo.
+- Run npm install from root directory.
+- Run docker-compose up, or docker-compose up -d to run the dameon in the background
+
+Dev Notes:
+- Nodemon is running and the app directory is mounted to the container, so there is no need to restart or rebuild the container during development.
+- EXCEPT!! If you add a dependency to the package.json file (don't add via npm install), you'll need to run docker-compose up --build to rebuild the image with the new package.
+- Stop the containers with docker-compose down.
