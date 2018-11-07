@@ -8,8 +8,18 @@ Getting started:
 - Clone repo.
 - Run npm install from root directory.
 - Run docker-compose up, or docker-compose up -d to run the dameon in the background
+- You can now access the app at http://localhost
 
 Dev Notes:
 - Nodemon is running and the app directory is mounted to the container, so there is no need to restart or rebuild the container during development.
 - EXCEPT!! If you add a dependency to the package.json file (don't add via npm install), you'll need to run docker-compose up --build to rebuild the image with the new package.
 - Stop the containers with docker-compose down.
+
+Notes for installing Docker for Windows:
+
+- Download and install Docker Community Edition for Windows: https://store.docker.com/editions/community/docker-ce-desktop-windows. To do this you’ll have to sign up for a free docker account.
+- If you are having trouble getting Docker to run, you can check out their pre-installation guide: https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install
+- After install, Docker should prompt you to restart or log out of windows.
+- Once you are logged back in, open Docker. It should prompt you to enable Hyper-V and Containers. Do this. Once completed, you’re computer will restart.
+- Once everything starts back up Docker should start running and you can follow the instructions in the CHIMP repo’s (docker branch) README to get everything running.
+
