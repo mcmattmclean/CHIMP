@@ -4,18 +4,13 @@ Example = require("../models/example");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-router.post('/', function(req, res, next) {
-  console.log(req.body.exampleText);
-  Example.create({text: req.body.exampleText}, function(err, text) {
+  Example.find({}, function(err, example) {
     if(err) {
       console.log(err);
     } else {
-      res.redirect('/');
+      res.render('example', {example: example});
     }
-  })
+  });
 });
 
 module.exports = router;
