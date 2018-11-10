@@ -21,5 +21,5 @@ Notes for installing Docker for Windows:
 - If you are having trouble getting Docker to run, you can check out their pre-installation guide: https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install
 - After install, Docker should prompt you to restart or log out of windows.
 - Once you are logged back in, open Docker. It should prompt you to enable Hyper-V and Containers. Do this. Once completed, you’re computer will restart.
-- Once everything starts back up Docker should start running and you can follow the instructions in the CHIMP repo’s (docker branch) README to get everything running.
+- Once everything starts back up Docker should start running and you can follow the instructions above in the getting started section to get everything running.
 
