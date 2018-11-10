@@ -5,13 +5,15 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 
+require('dotenv').config();
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
 var mongoose = require('mongoose');
-
-mongoose.connect('mongodb://chimp-mongo:27017/chimp', { useNewUrlParser: true });
+var mongoURI = process.env.APP_ENV == 'production' ? process.env.DB_PROD : process.env.DB_LOCAL;
+mongoose.connect(mongoURI, { useNewUrlParser: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
