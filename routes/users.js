@@ -4,11 +4,11 @@ Users = require("../models/user");
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  Users.find({}, function(err, users) {
+  Users.find({}, function(err, usersFound) {
     if(err) {
       console.log(err);
     } else {
-      res.render('users', {users: users});
+      res.render('users', {users: usersFound});
     }
   });
 });
