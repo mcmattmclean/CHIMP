@@ -32,10 +32,12 @@ router.post('/addUser', function(req, res, next) {
         state: req.body.state,
         zipcode: req.body.zipcode
       } 
-    }, function(err, id) {
+    }, function(err, user) {
       if(err) {
         console.log(err);
+        res.status(500).send({message: "Some error occurred while creating the user."});
       } else {
+        console.log(user);
         res.redirect('/');
       }
   });
