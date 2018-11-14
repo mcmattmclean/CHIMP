@@ -8,6 +8,14 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/registerUser', function(req, res, next) {
+  res.render('registerUser');
+});
+
+router.get('/accountSuccess', function(req, res, next) {
+  res.render('accountSuccess');
+});
+
 router.post('/', function(req, res, next) {
   console.log(req.body.exampleText);
   Example.create({text: req.body.exampleText}, function(err, text) {
@@ -19,7 +27,7 @@ router.post('/', function(req, res, next) {
   })
 });
 
-router.post('/addUser', function(req, res, next) {
+router.post('/addDonor', function(req, res, next) {
   console.log(req.body.username);
   User.create(
     {
@@ -38,7 +46,7 @@ router.post('/addUser', function(req, res, next) {
         res.status(500).send({message: "Some error occurred while creating the user."});
       } else {
         console.log(user);
-        res.redirect('/');
+        res.redirect('/accountSuccess');
       }
   });
 });
