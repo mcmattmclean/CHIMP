@@ -1,11 +1,12 @@
-var mongoose = require("mongoose");
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema
 
-var CampaignSchema = new mongoose.Schema({
-    charityId: Number,
+const CampaignSchema = new mongoose.Schema({
+    charity: {type: Schema.Types.ObjectId, ref: 'Charity'},
     name: String,
     startDate: Date,
     endDate: Date,
-    donations: [Number]
+    donations: [{type: Schema.Types.ObjectId, ref: 'Donation'}]
 });
 
-module.exports = mongoose.model("Campaign", CampaignSchema);
+module.exports = mongoose.model('Campaign', CampaignSchema);

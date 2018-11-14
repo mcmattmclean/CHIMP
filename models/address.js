@@ -1,10 +1,10 @@
-var mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-var AddressSchema = new mongoose.Schema({
+const AddressSchema = new mongoose.Schema({
 	street: String,
   city: String,
   state: String,
   zip: String
 });
 
-module.exports = mongoose.model("Address", AddressSchema);
+module.exports = mongoose.model('Address', AddressSchema);

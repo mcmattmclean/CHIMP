@@ -1,7 +1,7 @@
-var mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-var ExampleSchema = new mongoose.Schema({
+const ExampleSchema = new mongoose.Schema({
 	text: String,
 });
 
-module.exports = mongoose.model("Example", ExampleSchema);
+module.exports = mongoose.model('Example', ExampleSchema);

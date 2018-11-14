@@ -54,27 +54,4 @@ router.post('/', function(req, res, next) {
   });
 });
 
-// See /register route above
-// router.post('/addUser', function(req, res, next) {
-//   console.log(req.body.username);
-//   User.create(
-//     {
-//       username: req.body.username,
-//       password: req.body.password,
-//       email: req.body.email,
-//       address: {
-//         street: req.body.street,
-//         city: req.body.city,
-//         state: req.body.state,
-//         zipcode: req.body.zipcode
-//       }
-//     }, function(err, id) {
-//       if(err) {
-//         console.log(err);
-//       } else {
-//         res.redirect('/');
-//       }
-//   });
-// });
-
 module.exports = router;
