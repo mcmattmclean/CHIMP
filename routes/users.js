@@ -1,14 +1,18 @@
 var express = require('express');
 var router = express.Router();
-Users = require("../models/user");
+Donor = require("../models/donor");
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  Users.find({}, function(err, usersFound) {
+  // Now we have to find donors and populate the address field
+  let donors = {};
+  Donor.find().populate(
+    'address'
+  ).exec(function(err, donors) {
     if(err) {
       console.log(err);
     } else {
-      res.render('users', {users: usersFound});
+      res.render('users', {donors: donors});
     }
   });
 });

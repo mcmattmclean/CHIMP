@@ -1,5 +1,5 @@
-{{#each users}}
+{{#each donors}}
     <div class="row">
-        {{this.username}}, {{this.password}}, {{this.email}}, {{this.address}}
+        {{this.username}} {{this.password}}, {{this.email}}, {{this.address.street}}, {{this.address.city}}, {{this.address.state}}, {{this.address.zip}}
     </div>
 {{/each}}
