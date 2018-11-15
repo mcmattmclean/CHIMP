@@ -10,7 +10,7 @@ require('dotenv').config();
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var exampleRouter = require('./routes/example');
-var newCharityRouter = require('./routes/newCharity');
+var registerRouter = require('./routes/register');
 
 var app = express();
 var mongoose = require('mongoose');
@@ -40,7 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/newCharity', newCharityRouter);
+app.use('/register', registerRouter);
 app.use('/example', exampleRouter);
 
 // catch 404 and forward to error handler
