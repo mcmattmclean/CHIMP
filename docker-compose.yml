@@ -1,0 +1,30 @@
+version: "3"
+services:
+  app:
+    container_name: chimp
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    ports:
+      - "80:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules/
+    links:
+      - mongo
+    networks:
+      - chimp_network
+  mongo:
+    container_name: chimp-mongo
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - chimp_db:/data/db
+    networks:
+      - chimp_network
+networks:
+  chimp_network:
+volumes:
+  chimp_db:
