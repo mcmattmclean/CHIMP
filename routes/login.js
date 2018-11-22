@@ -12,9 +12,10 @@ router.get('/', function(req, res, next) {
 
 router.post('/signin', function(req, res, next) {
 	console.log(req.body);
-	Charity.findOne({}, function(err, result){
+	var q = { 'username' : req.body.uName };
+	Charity.findOne({q}, function(err, result){
 		if(err){
-			Donor.findOne({}, function(err, result){
+			Donor.findOne({q}, function(err, result){
 				if(err){
 					console.log(err);
 					res.render('login', { message: 'Username not found' });
