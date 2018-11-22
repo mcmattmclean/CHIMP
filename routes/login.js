@@ -17,12 +17,12 @@ router.post('/signin', function(req, res, next) {
 			Donor.findOne({}, function(err, result){
 				if(err){
 					console.log(err);
-					res.render('/login', { message: 'Username not found' });
+					res.render('login', { message: 'Username not found' });
 				} else {
 					if(req.body.pWord == result.password) {
 						res.redirect('index');
 					} else {
-						res.render('/login', { message: 'Incorrect password' });
+						res.render('login', { message: 'Incorrect password' });
 					}
 				}
 			});
@@ -30,7 +30,7 @@ router.post('/signin', function(req, res, next) {
 			if(req.body.pWord == result.password){
 				res.redirect('index');
 			} else {
-				res.render('/login', { message: 'Incorrect password' });
+				res.render('login', { message: 'Incorrect password' });
 			}
 		  }
 	});	
