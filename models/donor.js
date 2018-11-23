@@ -8,4 +8,8 @@ const DonorSchema = extendSchema(User.schema, {
   donations: [{type: Schema.Types.ObjectId, ref: 'Donation'}]
 });
 
+DonorSchema.methods.validPassword = function( pwd ) {
+    return ( this.password === pwd );
+};
+
 module.exports = mongoose.model('Donor', DonorSchema);

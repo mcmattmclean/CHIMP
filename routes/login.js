@@ -8,16 +8,15 @@ Charity = require("../models/charity");
 
 /* GET login page. */
 router.get('/', function(req, res, next) {
-  res.render('login');
+  res.render('login', {message: req.flash('error')});
 });
 
-router.post('/', function(req, res, next) {
-	console.log(req.body);
-  passport.authenticate('local', {
-    successRedirect: '/',
+router.post('/', passport.authenticate('login', {
+    successRedirect: '/dashboard',
     failureRedirect: '/login',
-    failureFlash: true
+    failureFlash: true,
+  }), function(req, res) {
+
   });
-});
 
 module.exports = router;

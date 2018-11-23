@@ -1,0 +1,6 @@
+<!-- if current user has a donations attribute, they are a donor, else they are a charity -->
+{{#hasProp currentUser 'donations'}}
+  {{> donorDashboard}}
+{{else}}
+  {{> charityDashboard}}
+{{/hasProp}}
