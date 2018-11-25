@@ -1,1 +1,6 @@
+sudo: enabled
+
 language: javascript
+
+services:
+  - docker
