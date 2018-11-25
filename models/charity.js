@@ -9,4 +9,8 @@ const CharitySchema = extendSchema(User.schema, {
     campaigns: [{type: Schema.Types.ObjectId, ref: 'Campaign'}]
 });
 
+CharitySchema.methods.validPassword = function( pwd ) {
+    return ( this.password === pwd );
+};
+
 module.exports = mongoose.model('Charity', CharitySchema);
