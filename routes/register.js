@@ -29,7 +29,9 @@ router.post('/newCharity', function(req, res, next) {
         username: req.body.username,
         password: req.body.password,
         email: req.body.email,
-        address: address._id
+        address: address._id,
+        name: req.body.name,
+        missionStatement: req.body.missionStatement
       }, function(err, text) {
         if(err) {
           console.log(err);
