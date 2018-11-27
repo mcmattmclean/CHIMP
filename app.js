@@ -7,6 +7,7 @@ var sassMiddleware = require('node-sass-middleware');
 var passport = require('passport');
 var flash = require('connect-flash');
 var hbs = require('hbs');
+var methodOverride = require("method-override");
 var Donor = require("./models/donor");
 var Charity = require("./models/charity");
 
@@ -21,6 +22,7 @@ var dashboardRouter = require('./routes/dashboard');
 var charitiesRouter = require('./routes/charities');
 
 var app = express();
+
 var mongoose = require('mongoose');
 var mongoURI = process.env.APP_ENV == 'production' ? process.env.DB_PROD : process.env.DB_LOCAL;
 mongoose.connect(mongoURI, { useNewUrlParser: true });
@@ -35,6 +37,9 @@ app.use(require("express-session") ({
 	resave: false,
 	saveUninitialized: false
 }));
+
+app.use(methodOverride("_method"));
+app.use(express.urlencoded({ extended: false }));
 
 app.use(flash());
 require("./config/passport")(passport);
