@@ -1,0 +1,17 @@
+<h1> Charities </h1>
+<table class="table">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Link</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each charity}}
+        <tr>
+            <td>{{this.username}}</td>
+            <td><a href="/charity?id={{this._id}}">Learn More</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

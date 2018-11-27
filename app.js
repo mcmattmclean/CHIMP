@@ -18,6 +18,7 @@ var exampleRouter = require('./routes/example');
 var registerRouter = require('./routes/register');
 var loginRouter = require('./routes/login');
 var dashboardRouter = require('./routes/dashboard');
+var charitiesRouter = require('./routes/charities');
 
 var app = express();
 var mongoose = require('mongoose');
@@ -77,6 +78,7 @@ app.use('/register', registerRouter);
 app.use('/example', exampleRouter);
 app.use('/login', loginRouter);
 app.use('/dashboard', dashboardRouter);
+app.use('/charities', charitiesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
