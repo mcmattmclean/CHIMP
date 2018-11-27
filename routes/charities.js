@@ -13,8 +13,8 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/charity', function(req, res, next) {
-    Charity.findById(req.query.id, function(err, charity) {
+router.get('/:id', function(req, res, next) {
+    Charity.findById(req.params.id, function(err, charity) {
       if(err) {
         console.log(err);
       } else {
@@ -22,6 +22,6 @@ router.get('/charity', function(req, res, next) {
       }
     });
   });
-  
+
 
 module.exports = router;
