@@ -14,11 +14,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/charity', function(req, res, next) {
-    Charity.find({_id: req.params.id}, function(err, charity) {
+    Charity.findById(req.query.id, function(err, charity) {
       if(err) {
         console.log(err);
       } else {
-        res.render('charity', {charity: charity});
+        res.render('charity', {charity});
       }
     });
   });
