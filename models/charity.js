@@ -4,6 +4,8 @@ const User = require('./user');
 const Schema = mongoose.Schema;
 
 const CharitySchema = extendSchema(User.schema, {
+    name: String,
+    missionStatement: String,
     verified: Boolean,
     expirationDate: Date,
     campaigns: [{type: Schema.Types.ObjectId, ref: 'Campaign'}]
