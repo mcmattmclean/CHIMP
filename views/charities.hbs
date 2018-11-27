@@ -1,0 +1,19 @@
+<h1> Charities </h1>
+<table class="table">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Mission Statement</td>
+            <td>Link</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each charity}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.missionStatement}}</td>
+            <td><a href="charities/{{this._id}}">Learn More</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
